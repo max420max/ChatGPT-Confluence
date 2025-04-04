@@ -1,0 +1,9 @@
+Streamlit
+tiktoken
+atlassian-python-api
+openai
+numpy
+pandas
+beautifulsoup4
+nltk
+python-dotenv
