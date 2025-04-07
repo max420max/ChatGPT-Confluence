@@ -2,7 +2,7 @@ import os
 import atlassian
 from atlassian import Confluence
 import logging
-import streamlit as st
+#import streamlit as st
 
 # Configure logging (you can customize the level and format as needed)
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -15,8 +15,8 @@ def get_url():
         str or None: The Confluence URL or None if not found.
     """
 
-    #url = os.getenv("confluence-url")
-    url = st.secrets["confluence-url"]
+    url = os.getenv("confluence-url")
+    #url = st.secrets["confluence-url"]
     
     if not url:
         logging.error("Error: 'confluence-url' environment variable not found.")
@@ -68,10 +68,10 @@ def connect_to_Confluence():
         if url is None:
             return None
 
-        #username = os.getenv("confluence-username")
-        #api_token = os.getenv("confluence-api-token")
-        username = st.secrets["confluence-username"]
-        api_token = st.secrets["confluence-api-token"]
+        username = os.getenv("confluence-username")
+        api_token = os.getenv("confluence-api-token")
+        #username = st.secrets["confluence-username"]
+        #api_token = st.secrets["confluence-api-token"]
 
         confluence = Confluence(
             url=url,
