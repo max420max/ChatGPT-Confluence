@@ -15,7 +15,8 @@ def get_url():
         str or None: The Confluence URL or None if not found.
     """
 
-    url = os.getenv("confluence-url")
+    #url = os.getenv("confluence-url")
+    url = os.getenv("CONFLUENCE_URL")
     #url = st.secrets["confluence-url"]
     
     if not url:
@@ -68,8 +69,10 @@ def connect_to_Confluence():
         if url is None:
             return None
 
-        username = os.getenv("confluence-username")
-        api_token = os.getenv("confluence-api-token")
+        #username = os.getenv("confluence-username")
+        #api_token = os.getenv("confluence-api-token")
+        username = os.getenv("CONFLUENCE_USERNAME")
+        api_token = os.getenv("CONFLUENCE_API_TOKEN")
         #username = st.secrets["confluence-username"]
         #api_token = st.secrets["confluence-api-token"]
 
