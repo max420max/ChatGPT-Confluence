@@ -4,10 +4,12 @@ import sys
 import openai
 import os
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
-openai.api_key = os.getenv("openai-api-key")
+#openai.api_key = os.getenv("openai-api-key")
+openai.api_key = st.secrets["openai-api-key"]
 
 from confluence_utils import connect_to_Confluence, get_spaces
 from embedding_utils import return_Confluence_embeddings, get_token_count
