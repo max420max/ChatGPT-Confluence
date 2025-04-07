@@ -42,6 +42,12 @@ def get_spaces(confluence):
         limit = 10  # Adjust as needed
         while True:
             results = confluence.get_all_spaces(start=start, limit=limit)
+            logging.info(f"get_all_spaces returned: {results}")
+            
+            if not isinstance(results, dict):
+                logging.error(f"Unexpected response from Confluence: {results}")
+                return []
+            
             all_spaces.extend(results['results'])
 
             if '_links' in results and 'next' in results['_links']:
