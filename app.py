@@ -3,10 +3,10 @@ import logging
 import sys
 import openai
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import streamlit as st
 
-load_dotenv()
+#load_dotenv()
 
 #openai.api_key = os.getenv("openai-api-key")
 openai.api_key = os.getenv("OPENAI_API_KEY")
